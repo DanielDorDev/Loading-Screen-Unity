@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine.Events;
-using UnityEngine;
 using System;
 /// <summary>
 /// Example of how to use 'ProgressYieldInstruction'

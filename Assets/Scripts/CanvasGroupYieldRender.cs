@@ -10,16 +10,7 @@ using UnityEngine.UI;
 public class CanvasGroupYieldRender : MonoBehaviour
 {
     [SerializeField] private ProgressYieldController _customYieldProgressController;
-
-    // Perform operation on attached canvas group
-    private CanvasGroup _cacheCanvasGroup;
-
-    //
     [SerializeField] private Slider slider = default;
-    void Awake()
-    {
-        _cacheCanvasGroup = GetComponent<CanvasGroup>();
-    }
     
     public void ChangeSliderValue()
     {
