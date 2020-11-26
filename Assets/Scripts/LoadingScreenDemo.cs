@@ -5,8 +5,13 @@ using LoadingScreen.Utility;
 public class LoadingScreenDemo : MonoBehaviour
 {
     public CanvasGroupYieldRender render;
-    IEnumerator Start()
+    public float waitTime = 3f;
+    public void LoadScreen()
     {
-        yield return render.LoadScreen(new WaitForSecondsRealTimeAdapter(new WaitForSecondsRealtime(3)));
+        StartCoroutine(ExecuteYieldInstruction());
+    }
+    IEnumerator ExecuteYieldInstruction()
+    {
+        yield return render.LoadScreen(new WaitForSecondsRealTimeAdapter(new WaitForSecondsRealtime(waitTime)));
     }
 }

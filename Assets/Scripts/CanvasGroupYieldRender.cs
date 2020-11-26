@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CanvasGroup))]
 public class CanvasGroupYieldRender : MonoBehaviour
 {
-    private ProgressYieldController _customYieldProgressController;
+    [SerializeField] private ProgressYieldController _customYieldProgressController;
 
     // Perform operation on attached canvas group
     private CanvasGroup _cacheCanvasGroup;
@@ -19,13 +19,12 @@ public class CanvasGroupYieldRender : MonoBehaviour
     void Awake()
     {
         _cacheCanvasGroup = GetComponent<CanvasGroup>();
-        _customYieldProgressController = new ProgressYieldController();
-
-        _customYieldProgressController.OnStart += () => _cacheCanvasGroup.interactable = false;
-        _customYieldProgressController.OnCustomEvent += (float value) => slider.value = value;
-        _customYieldProgressController.OnFinish += () => _cacheCanvasGroup.interactable = true;
     }
-
+    
+    public void ChangeSliderValue()
+    {
+        slider.value = _customYieldProgressController.progress;
+    }
 
     /// <summary>
     /// Preform 
