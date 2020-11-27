@@ -13,7 +13,7 @@ namespace Bailfie.LoadingScreen.Utility
         protected AsyncOperationHandle _operation;
         public override float Progress => _operation.PercentComplete / 100f;
 
-        public override bool keepWaiting => _operation.IsDone;
+        public override bool keepWaiting => !_operation.IsDone;
 
         public AsyncOperationHandleAdapter(AsyncOperationHandle operation)
         {

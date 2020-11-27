@@ -9,7 +9,7 @@ namespace LoadingScreen.Utility
     {
         protected AsyncOperation _operation;
         public override float Progress => _operation.progress;
-        public override bool keepWaiting => _operation.isDone;
+        public override bool keepWaiting => !_operation.isDone;
         public AsyncOperationAdapter(AsyncOperation operation)
             => _operation = operation;
     }
